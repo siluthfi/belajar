@@ -2,6 +2,8 @@
 import random
 import time
 import os
+# if you dont have this module, you should install it first with 'pip install plyer'
+from plyer import notification
 
 def help():
 	print('')
@@ -26,7 +28,11 @@ def help():
 	elif result == 0 :
 		exit()
 	else:
-		print('Please choose correctly!')
+		# notification
+		notification.notify(
+			title = "Wrong!",
+			message = "Please choose correctly!"
+		)
 
 def first_roll():
 	return random.randint(1,17)
